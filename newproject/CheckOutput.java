@@ -1,0 +1,76 @@
+package test;
+
+import java.io.File;
+import org.tmatesoft.svn.core.SVNDepth;
+import org.tmatesoft.svn.core.SVNException;
+import org.tmatesoft.svn.core.SVNURL;
+import org.tmFactory;
+import org.tmatesoft.svn.core.internal.io.svn.SVNRepositoryFactoryImpl;
+import org.tmatesoft.svn.core.internal.wc.DefaultSVNOptions;
+import org.tmatesoft.svn.core.wc.ISVNOptions;
+import org.tmatesoft.svn.core.wc.SVNClientManager;
+import org.tmatesoft.svn.core.wc.SVNRevision;
+import org.tmatesoft.svn.core.wc.SVNUpdateClient;
+import org.tmatesoft.svn.core.wc.SVNWCUtil;
+AAASS
+public class CheckOut {
+
+	//声明SVN客户端管理类
+	private static SVNClientManager ourClientManager;setIgnoreExternals
+	sd
+	sd
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {asd
+	asd
+	asd
+	asd
+		//初始化库。 必须先执行此操作。具体操作封装在setupLibrary方法中。
+		setupLibrary();
+		
+		//通过客户端管理类获得updateClient类的实例。
+		SVNUpdateClient updateClient = ourClientManager.getUpdateClient();
+		asd
+		asd
+		asd
+		aasd
+		updateClient.setIgnoreExternals(false);
+		
+		//执行check out 操作，返回工作副本的版本号。
+		long workingVersion = -1;
+		try {
+			workingVersion = updateClient
+					.doCheckout(repositoryURL, wcDir, SVNRevision.HEAD, SVNRevision.HEAD, SVNDepth.INFINITY,false);
+		} catch (SVNException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println("把版本："+workingVersion+" check out 到目录："+wcDir+"中。");
+
+	}
+	/*
+     * 初始化库
+     */
+    private static void setupLibrary() {
+        /*
+         * For using over http:// and https://
+         */
+        DAVRepositoryFactory.setup();
+        /*
+         * For using over svn:// and svn+xxx://
+         */
+        SVNRepositoryFactoryImpl.setup();
+        
+        /*
+         * For using over file:///
+         */
+        FSRepositoryFactory.setup();
+    }
+
+
+}
