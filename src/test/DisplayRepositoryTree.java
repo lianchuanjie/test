@@ -9,14 +9,7 @@ import org.tmatesoft.svn.core.SVNNodeKind;
 import org.tmatesoft.svn.core.SVNURL;
 import org.tmatesoft.svn.core.auth.ISVNAuthenticationManager;
 import org.tmatesoft.svn.core.internal.io.dav.DAVRepositoryFactory;
-import org.tmatesoft.svn.core.internal.io.svn.SVNRepositoryFactoryImpl;
-import org.tmatesoft.svn.core.io.SVNRepository;
-import org.tmatesoft.svn.core.io.SVNRepositoryFactory;
-import org.tmatesoft.svn.core.wc.SVNWCUtil;
-
-public class DisplayRepositoryTree {
-
-	/**
+import org.tmatesoft.svn.core
 	 * @param args
 	 */
 	public static void main(String[] args) {
@@ -39,15 +32,6 @@ public class DisplayRepositoryTree {
          * 实例化版本库类
          * */
         try {
-        	//获取SVN的URL。
-        	repositoryURL=SVNURL.parseURIEncoded(url);
-        	//根据URL实例化SVN版本库。
-            repository = SVNRepositoryFactory.create(repositoryURL);
-        } catch (SVNException svne) {
-            /*
-             * 打印版本库实例创建失败的异常。
-             */
-            System.err
                     .println("创建版本库实例时失败，版本库的URL是 '"
                             + url + "': " + svne.getMessage());
             System.exit(1);
