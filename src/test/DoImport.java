@@ -37,7 +37,19 @@ public class DoImport {
 		String password = "hanyi";
 		ISVNOptions options = SVNWCUtil.createDefaultOptions(true);
 		//实例化客户端管理类
-		ourClientManager = SVNClientManager.newInstance(
+		ourClientManager = SVNClientMmatesoft.svn.core.wc.ISVNOptions;
+import org.tmatesoft.svn.core.wc.SVNClientManager;
+import org.tmatesoft.svn.core.wc.SVNWCUtil;
+
+public class DoImport {
+
+	//声明SVN客户端管理类
+	private static SVNClientManager ourClientManager;
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {anager.newInstance(
 				(DefaultSVNOptions) options, name, password);
 		//要把此目录中的内容导入到版本库
 		File impDir = new File("D:/svntest");
