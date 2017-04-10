@@ -13,7 +13,6 @@ var app =  angular.module('app')
         app.factory    = $provide.factory;
         app.service    = $provide.service;
         app.constant   = $provide.constant;
-        app.value      = $provide.value;
     }
   ])
 
@@ -25,6 +24,7 @@ var app =  angular.module('app')
     // Tell the module what language to use by default
     $translateProvider.preferredLanguage('zh_CN');
     // Tell the module to store the language in the local storage
+    $translateProvider.useLocalStorage();
     $translateProvider.useLocalStorage();
   }])
   
