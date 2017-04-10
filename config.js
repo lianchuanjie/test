@@ -12,7 +12,6 @@ var app =  angular.module('app')
         app.filter     = $filterProvider.register;
         app.factory    = $provide.factory;
         app.service    = $provide.service;
-        app.constant   = $provide.constant;
     }
   ])
 
